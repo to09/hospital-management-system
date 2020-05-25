@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Login |
+{% endblock title %}
+
+{% block body %}
+<div class = "containerfluid px-0 my-5">
+    <h2 class = "text-center"> <B>Log in </B> </h2>
+</div>
+<div class="container">
+<form>
+{% csrf_token %}
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" aria-describedby="userHelp" name= "username" placeholder="Enter Username">
+    <small id="userHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name = "password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
+

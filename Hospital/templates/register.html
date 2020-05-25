@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Register | {% endblock title %} 
+
+{% block body %}
+<div class = "containerfluid px-0 my-5">
+    <h2 class = "text-center"> <B>Register Here</B> </h2>
+</div>
+<div class = "container">
+<form method="POST" action="register">
+{% csrf_token %}
+  <div class="form-row">
+    <div class="col">
+        <label for="firstname">First</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name">
+    </div>
+    <div class="col">
+      <label for="lastname">Last</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name">
+    </div>
+  </div>
+  </br>
+  <div class="form-row">
+    <div class="col">
+        <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="user name">
+    </div>
+    <div class="col">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com">
+    </div>
+  </div>
+  </br>
+  <div class="form-row">
+    <div class="col">
+        <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Must be Strong">
+    </div>
+    <div class="col">
+      <label for="confirmpassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Same as password">
+    </div>
+  </div></br>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Register as</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="user_type" id="doctor" value="option1" checked>
+          <label class="form-check-label" for="doctor">
+            Doctor
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="user_type" id="patient" value="option2">
+          <label class="form-check-label" for="patient">
+            Patient
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+        <button class= "btn btn-primary" type = "submit"> Sign In </button>
+</form>
+</div>
+{% endblock body %}
+
